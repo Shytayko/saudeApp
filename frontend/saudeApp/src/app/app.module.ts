@@ -9,7 +9,7 @@ import { CadastroPlanoDeSaudeComponent } from './cadastro-plano-de-saude/cadastr
 import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.component';
 import { CadastroUnidadeSaudeComponent } from './cadastro-unidade-saude/cadastro-unidade-saude.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,9 +27,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
   ],
   imports: [
-   
     BrowserModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   
 
