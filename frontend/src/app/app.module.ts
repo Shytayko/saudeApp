@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -10,10 +11,8 @@ import { CadastroMedicosComponent } from './cadastro-medicos/cadastro-medicos.co
 import { CadastroUnidadeSaudeComponent } from './cadastro-unidade-saude/cadastro-unidade-saude.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
-
-
-
-
+import { ModelComponent } from './model/model.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,14 +23,15 @@ import { AppRoutingModule } from './app-routing.module';
     CadastroPlanoDeSaudeComponent,
     CadastroMedicosComponent,
     CadastroUnidadeSaudeComponent,
-    
-
+    ModelComponent,
   ],
   imports: [
-   
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    
   ],
   
 
