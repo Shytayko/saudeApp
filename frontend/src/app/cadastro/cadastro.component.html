@@ -3,7 +3,8 @@
         <form>
             <h1 class="h3 mb-3 fw-normal">CADASTRO PACIENTE</h1>
             <div  class="big">
-                <input ng-model= "testecpf"type="text" class="form-control" id="floatingInput" placeholder="INFORME CPF" ><br>
+            <div class="form-group">
+                <input type="number" class="form-control" [(ngModel)]="cliente.cpf" id="cpf" name = "cpf" placeholder="INFORME CPF" ><br>
                 <input type="text" class="form-control" id="floatingInput" placeholder="INFORME NOME"><br>
                 <input type="text" class="form-control" id="floatingInput" placeholder="DATA DE NASCIMENTO"><br>
                 <input type="text" class="form-control" id="floatingInput" placeholder="ENDEREÇO"><br>
@@ -11,7 +12,8 @@
                 <input type="text" class="form-control" id="floatingInput" placeholder="E-MAIL"><br>          
                 <input type="text" class="form-control" id="floatingInput" placeholder="PLANO DE SAUDE"><br>
             </div>
-            <button (click)="salvarCliente()" >Cadastrar</button> 
+            <button (click)="salvarCliente()" class="w-100 btn btn-lg btn-primary" >Cadastrar</button> 
+        </div>
         </form>
     </main>  
 </body>
