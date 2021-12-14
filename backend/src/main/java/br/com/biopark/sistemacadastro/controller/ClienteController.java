@@ -52,7 +52,7 @@ public class ClienteController {
     ){
         Cliente clienteBd= repository.findById(id).get();
         clienteBd.setNome(cliente.getNome());
-        clienteBd.setAtivo(cliente.isAtivo());
+        //clienteBd.setAtivo(cliente.isAtivo());
         clienteBd.setCpf(cliente.getCpf());
         clienteBd.setDataNascimento(cliente.getDataNascimento());
         clienteBd.setTelefone(cliente.getTelefone());

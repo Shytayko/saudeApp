@@ -16,6 +16,6 @@ public class Cliente implements Serializable {
     private String cpf;
     private Date dataNascimento;
     private String telefone;
-    private boolean ativo;
+    //private boolean ativo;
     private String planoSaude;
 }
