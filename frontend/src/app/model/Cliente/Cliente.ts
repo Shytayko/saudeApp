@@ -3,7 +3,7 @@ export interface Cliente {
     nome: String;
     cpf: String;
     dataNascimento: Date;
-    ativo: boolean;
     planoSaude: String;
+    telefone: String;
 }
 

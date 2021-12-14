@@ -12,9 +12,7 @@ export class ClienteService {
   url = 'http://localhost:8080/cliente'
 
   constructor(private httpClient : HttpClient) {
-    this.getCliente();
-    this.salvarCliente();
-    
+    this.getAtributo();
    }
 
   httpOption = {
@@ -25,14 +23,13 @@ export class ClienteService {
     })
   }
 
-  getCliente():Observable<Cliente[]>{
+  getAtributo():Observable<Cliente[]>{
     return this.httpClient.get<Cliente[]>(this.url + '/todos');
-
+    
   }
 
-
-  salvarCliente(): Observable<Cliente> {
-    return this.httpClient.post<Cliente>(this.url + '/criar', this.httpOption);
+  salvarAtributo(cliente: Cliente): Observable<Cliente> {
+    return this.httpClient.post<Cliente>(this.url + '/criar', JSON.stringify(cliente), this.httpOption)
   }
 
 /*
@@ -52,6 +49,5 @@ export class ClienteService {
     return this.httpClient.put<Cliente>(this.url + '/atualizar/'+ cliente.id, JSON.stringify(cliente), this.httpOption)
     console.log
   }
-
   */
 }

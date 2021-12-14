@@ -2,18 +2,14 @@
     <main class="form-signin">
         <form>
             <h1 class="h3 mb-3 fw-normal">CADASTRO PACIENTE</h1>
-            <div  class="big">
             <div class="form-group">
-                <input type="number" class="form-control" [(ngModel)]="cliente.cpf" id="cpf" name = "cpf" placeholder="INFORME CPF" ><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME NOME"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="DATA DE NASCIMENTO"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="ENDEREÇO"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="TELEFONE"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="E-MAIL"><br>          
-                <input type="text" class="form-control" id="floatingInput" placeholder="PLANO DE SAUDE"><br>
+                <input type="text" class="form-control" [(ngModel)]="cliente.nome" id="nome" name="nome" placeholder="INFORME NOME"><br>                
+                <input type="text" class="form-control" [(ngModel)]="cliente.cpf" id="cpf" name= "cpf" placeholder="INFORME CPF" mask="000.000.000-00" ><br>
+                <input type="date" class="form-control" [(ngModel)]="cliente.dataNascimento" id="dataNascimento" name="dataNascimento" placeholder="DATA DE NASCIMENTO"><br>
+                <input type="text" class="form-control" [(ngModel)]="cliente.planoSaude" id="planoSaude" name="planoSaude" placeholder="PLANO DE SAUDE"><br>
+                <input type="text" class="form-control" [(ngModel)]="cliente.telefone" id="telefone" name="telefone" placeholder="TELEFONE"  mask="(00) 00000-0000"><br>
             </div>
-            <button (click)="salvarCliente()" class="w-100 btn btn-lg btn-primary" >Cadastrar</button> 
-        </div>
+            <button (click)="salvarCliente(cliente)" class="w-100 btn btn-lg btn-primary" >Cadastrar</button> 
         </form>
     </main>  
 </body>

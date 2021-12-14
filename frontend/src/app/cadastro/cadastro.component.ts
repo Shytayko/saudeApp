@@ -9,22 +9,29 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
+	clientes: Cliente[] = []
+    cliente = {} as Cliente;
   
   constructor(private clienteService: ClienteService) {}
 
-    clientes: Cliente[] = []
-    cliente = {} as Cliente;
+
     
 	ngOnInit(): void {}
 
 	getCliente(){
-		this.clienteService.getCliente().subscribe(
+		this.clienteService.getAtributo().subscribe(
 			(clientes: Cliente[]) =>{
 				this.clientes= clientes
+				console.log(clientes)
 			}
 		)
 	}
-  	salvarCliente(){
-		console.log(this.cliente.cpf);
+  	salvarCliente(cliente: Cliente){
+		this.cliente.cpf = this.cliente.cpf;
+		this.cliente.nome = this.cliente.nome
+		this.cliente.dataNascimento = this.cliente.dataNascimento
+		this.cliente.planoSaude = this.cliente.planoSaude
+		this.cliente.telefone = this.cliente.telefone
+		this.clienteService.salvarAtributo(cliente).subscribe(()=>{})
   	}
   }
