@@ -1,18 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from "src/app/model/Cliente/Cliente";
+import { Medico } from "src/app/model/Medico/Medico";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class MedicoService {
 
-  url = 'http://localhost:8080/cliente'
+  url = 'http://localhost:8080/medicos'
 
   constructor(private httpClient : HttpClient) {
-    this.getAtributoCliente();
+    this.getAtributoMedico();
    }
 
   httpOption = {
@@ -23,13 +23,13 @@ export class ClienteService {
     })
   }
 
-  getAtributoCliente():Observable<Cliente[]>{
-    return this.httpClient.get<Cliente[]>(this.url + '/todos');
+  getAtributoMedico():Observable<Medico[]>{
+    return this.httpClient.get<Medico[]>(this.url + '/todos');
     
   }
 
-  salvarAtributoCliente(cliente: Cliente): Observable<Cliente> {
-    return this.httpClient.post<Cliente>(this.url + '/criar', JSON.stringify(cliente), this.httpOption)
+  salvarAtributoMEdico(medico: Medico): Observable<Medico> {
+    return this.httpClient.post<Medico>(this.url + '/criar', JSON.stringify(medico), this.httpOption)
   }
 
 /*

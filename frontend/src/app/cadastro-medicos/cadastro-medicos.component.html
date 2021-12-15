@@ -3,15 +3,27 @@
         <form>
             <h1 class="h3 mb-3 fw-normal">CADASTRO MÉDICOS</h1>
             <div class="form-group">
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME CPF"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME ID"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME CRM"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME NOME"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME ESPECIALIDADE"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME PLANOS DE SAUDE"><br>
-                <input type="text" class="form-control" id="floatingInput" placeholder="INFORME TELEFONE"><br>
+                <input type="text" class="form-control" [(ngModel)]="medico.crm" id="crm"                     name="crm" placeholder="INFORME CRM"><br>
+                <input type="text" class="form-control" [(ngModel)]="medico.nome" id="nome"                   name="nome"placeholder="INFORME NOME"><br>
+                <input type="text" class="form-control" [(ngModel)]="medico.especialidade" id="especialidade" name ="especialidade" placeholder="INFORME ESPECIALIDADE"><br>
+                <input type="text" class="form-control" [(ngModel)]="medico.planoSaude" id="planoSaude"       name="planoSaude" placeholder="INFORME PLANOS DE SAUDE" ><br>
+                <input type="text" class="form-control" [(ngModel)]="medico.telefone" id="telefone"           name="telefone"placeholder="INFORME TELEFONE"><br>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+            <button (click)="salvarMedicos(medico)" class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button><br><br>
+            <button (click)="listarMedicos()" class="w-100 btn btn-lg btn-primary" type="submit">Listar</button>
+            <div class="card-body">
+                <table class="table table-houver">
+                    <thead>
+                        <tr *ngFor= "let medico of medicos">
+                            <td>{{medico.nome}}</td>
+                            <td>{{medico.crm}}</td>
+                            <td>{{medico.telefone}}</td>
+                            <td>{{medico.planoSaude}}</td>
+                            <td>{{medico.especialidade}}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </form>
     </main>
 </body>

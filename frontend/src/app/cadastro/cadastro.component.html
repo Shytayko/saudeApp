@@ -9,7 +9,22 @@
                 <input type="text" class="form-control" [(ngModel)]="cliente.planoSaude" id="planoSaude" name="planoSaude" placeholder="PLANO DE SAUDE"><br>
                 <input type="text" class="form-control" [(ngModel)]="cliente.telefone" id="telefone" name="telefone" placeholder="TELEFONE"  mask="(00) 00000-0000"><br>
             </div>
-            <button (click)="salvarCliente(cliente)" class="w-100 btn btn-lg btn-primary" >Cadastrar</button> 
+            <button (click)="salvarCliente(cliente)" class="w-100 btn btn-lg btn-primary" >Cadastrar</button><br>
+            <br><button (click)="listarCliente()" class="w-100 btn btn-lg btn-primary" >Listar</button> 
+
+            <div class="card-body">
+                <table class="table table-houver">
+                    <thead>
+                        <tr *ngFor= "let cliente of clientes">
+                            <td>{{cliente.nome}}</td>
+                            <td>{{cliente.cpf}}</td>
+                            <td>{{cliente.dataNascimento}}</td>
+                            <td>{{cliente.planoSaude}}</td>
+                            <td>{{cliente.telefone}}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </form>
     </main>  
 </body>

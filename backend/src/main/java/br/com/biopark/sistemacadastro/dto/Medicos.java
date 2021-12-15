@@ -14,7 +14,7 @@ public class Medicos implements Serializable {
     private String nome;
     private String crm;
     private String telefone;
-    private boolean ativo;
+    //private boolean ativo;
     private String planosSaude;
     private String especialidade;
 }

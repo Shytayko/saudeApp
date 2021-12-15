@@ -13,25 +13,23 @@ export class CadastroComponent implements OnInit {
     cliente = {} as Cliente;
   
   constructor(private clienteService: ClienteService) {}
-
-
     
 	ngOnInit(): void {}
 
-	getCliente(){
-		this.clienteService.getAtributo().subscribe(
-			(clientes: Cliente[]) =>{
-				this.clientes= clientes
-				console.log(clientes)
-			}
-		)
+	listarCliente(){
+		this.clienteService.getAtributoCliente().subscribe((clientes: Cliente[]) =>{
+			this.clientes= clientes;
+			console.log(clientes);
+		})
 	}
   	salvarCliente(cliente: Cliente){
+		
 		this.cliente.cpf = this.cliente.cpf;
 		this.cliente.nome = this.cliente.nome
 		this.cliente.dataNascimento = this.cliente.dataNascimento
 		this.cliente.planoSaude = this.cliente.planoSaude
 		this.cliente.telefone = this.cliente.telefone
-		this.clienteService.salvarAtributo(cliente).subscribe(()=>{})
+		this.clienteService.salvarAtributoCliente(cliente).subscribe(()=>{})
+		window.alert("Infomrações cadastradas");
   	}
   }

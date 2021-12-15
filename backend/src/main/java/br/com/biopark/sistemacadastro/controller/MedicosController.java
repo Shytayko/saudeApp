@@ -52,7 +52,7 @@ public class MedicosController {
     ){
         Medicos medicosBd= repository.findById(id).get();
         medicosBd.setNome(medicos.getNome());
-        medicosBd.setAtivo(medicos.isAtivo());
+        //medicosBd.setAtivo(medicos.isAtivo());
         medicosBd.setCrm(medicos.getCrm());
         medicosBd.setTelefone(medicos.getTelefone());
         medicosBd.setEspecialidade(medicos.getEspecialidade());
